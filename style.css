@@ -1,0 +1,272 @@
+/* 우린이치 《데미안》 — 휴대폰 세로 화면을 기준으로 한 공통 스타일 */
+:root {
+  color-scheme: light;
+  --bg: #fcfcfc;
+  --panel: #f4f4f4;
+  --text: #383838;
+  --muted: #707070;
+  --accent: #555555;
+  --line: #e1e1e1;
+  --serif: var(--sans);
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro KR", "Apple SD Gothic Neo", "Segoe UI", Roboto, "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: #eeeeee; scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { width: min(100%, 520px); min-height: 100vh; min-height: 100svh; margin: 0 auto; padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.85; word-break: keep-all; overflow-wrap: anywhere; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: #0000000a; }
+img { max-width: 100%; }
+::selection { background: #dedede; color: #333333; }
+:focus-visible { outline: 2px solid #666666; outline-offset: 4px; }
+.skip-link { position: fixed; top: 12px; left: 12px; transform: translateY(-160%); z-index: 10; padding: 10px 18px; background: #ededed; color: var(--text); }
+.skip-link:focus { transform: translateY(0); }
+.wrap { width: calc(100% - 40px); margin-inline: auto; }
+.site-header { position: sticky; top: 0; z-index: 5; padding-top: env(safe-area-inset-top, 0px); background: #fcfcfcf5; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+.header-inner { min-height: 58px; display: flex; align-items: center; }
+.wordmark { width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500; letter-spacing: -.06em; }
+.header-label { font-size: 10px; color: var(--muted); font-weight: 400; letter-spacing: .13em; }
+.mono { font-family: var(--sans); font-size: 10px; letter-spacing: .1em; }
+.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.dot { width: 4px; height: 4px; border-radius: 50%; background: #8b8b8b; flex-shrink: 0; }
+.hero { padding: 22px 0 30px -10px; }
+.hero-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 23px; }
+.draft-label { font-size: 10px; color: var(--muted); white-space: nowrap; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.cover-figure { width: min(100%, 62vw, 400px); margin: 0 auto; }
+.cover-image { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #f5f5f5; border: 1px solid #ededed; box-shadow: 0 8px 24px #00000007; }
+figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; color: var(--muted); font-size: 10px; letter-spacing: .02em; }
+figcaption.cover-info { display: block; margin: 8px 0 0; text-align: center; }
+.album-info-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 12px; color: var(--muted); font-size: 14px; letter-spacing: 0; }
+.album-info-link:hover { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+.hero-copy { min-width: 0; text-align: center; }
+.hero-copy .eyebrow { justify-content: center; font-size: 12px; letter-spacing: .02em; }
+.album-members { width: min(100%, 260px); display: grid; gap: 8px; margin: 22px auto 0; padding-top: 18px; border-top: 1px solid var(--line); text-align: left; }
+.album-members > div { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: baseline; }
+.album-members dt { margin: 0; color: var(--text); font-size: 14px; font-weight: 500; }
+.album-members dd { margin: 0; color: var(--muted); font-size: 14px; }
+h1 { font-family: var(--sans); font-weight: 300; font-size: clamp(26px, 10vw, 34px); line-height: 1.35; letter-spacing: .04em; margin: 10px 0 7px; }
+.english-title { font-family: var(--serif); font-size: 13px; letter-spacing: .3em; color: var(--muted); margin: 0 0 17px; }
+.hero-line { font-size: 16px; font-weight: 400; line-height: 1.8; letter-spacing: -.025em; margin: 0 0 13px; color: #5c5c5c; }
+.hero-description { font-size: 14px; line-height: 1.85; color: var(--muted); margin: 0; }
+.hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+.primary-link, .text-link { min-width: 0; min-height: 52px; display: flex; justify-content: center; align-items: center; gap: 10px; border: 1px solid #dedede; border-radius: 7px; padding: 11px 10px; font-size: 13px; line-height: 1.4; font-weight: 400; }
+.primary-link { background: #eeeeee; color: #454545; }
+.text-link { background: #fcfcfc; color: #606060; }
+.primary-link:hover, .text-link:hover { background: #e8e8e8; }
+.hero-foot { padding-top: 20px; margin-top: 27px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.9; text-align: center; }
+.hero-foot strong { display: block; font-size: 13px; font-weight: 400; color: #5c5c5c; }
+.hero-foot > .mono { display: none; }
+.section { padding: 30px 0 36px; border-top: 1px solid var(--line); }
+.section-heading { margin-bottom: 22px; }
+.section-number { font-size: 10px; letter-spacing: .12em; color: var(--muted); margin: 0 0 9px; }
+h2 { font-size: 22px; line-height: 1.5; font-weight: 400; letter-spacing: -.045em; margin: 0; }
+.heading-note { color: var(--muted); font-size: 13px; margin: 10px 0 0; line-height: 1.8; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
+.about-pull { font-family: var(--serif); font-size: 27px; line-height: 1.75; font-weight: 400; letter-spacing: -.05em; margin: 0; color: #555555; }
+.about-pull span { color: #777777; }
+.about-copy { min-width: 0; font-size: 15px; color: #595959; }
+.about-copy p { margin: 0 0 22px; }
+.editable-copy { color: var(--muted); font-size: 14px; padding-left: 16px; border-left: 1px solid #cecece; }
+.album-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; margin: 26px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+dt { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+dd { margin: 0; font-size: 14px; }
+.track-list { border-top: 1px solid var(--line); }
+.album-tracks { border-top: 0; }
+.track { border-bottom: 1px solid var(--line); }
+.track-link { display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 12px; min-height: 50px; padding: 5px 12px 5px 2px; }
+.track-link:hover { background: #f4f4f4; }
+.track-number { color: var(--muted); font-family: var(--serif); font-size: 19px; font-style: italic; }
+.track-title { font-size: 16px; font-weight: 400; letter-spacing: -.02em; }
+.track-subtitle { display: block; color: var(--muted); font-size: 12px; margin-top: 5px; }
+.track-external { color: var(--muted); font-size: 22px; text-align: center; }
+.lyrics { font-size: 15px; line-height: 2.1; color: #606060; white-space: pre-line; margin: 0; }
+.track-credit { margin: 0; color: var(--muted); font-size: 12px; }
+.gallery-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 25px; }
+.photo { min-width: 0; margin: 0; }
+.photo-placeholder { aspect-ratio: 4 / 3; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f2f2f2; border: 1px solid #e9e9e9; overflow: hidden; }
+.photo-label { color: #626262; font-size: 15px; }
+.photo-index { font-family: var(--serif); font-size: 39px; font-weight: 400; line-height: 1; color: #999999; margin-bottom: 16px; }
+.photo-hint { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+.gallery-grid figcaption { font-size: 12px; }
+.gallery-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+.credits-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.band-note { border-left: 1px solid #cccccc; padding-left: 18px; }
+.band-note h3 { font-size: 22px; font-weight: 400; letter-spacing: -.06em; margin: 0 0 7px; }
+.band-note p { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+.member-placeholder { font-size: 14px; line-height: 2.1; color: #606060; }
+.credit-list { margin: 0; }
+.credit-row { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 16px; border-bottom: 1px solid var(--line); padding: 16px 0; }
+.credit-row dt { margin: 0; font-size: 12px; }
+.credit-row dd { color: #626262; font-size: 14px; }
+.closing { text-align: center; padding: 36px 20px; background: #f6f6f6; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.closing-label { display: block; font-family: var(--serif); font-size: 11px; color: var(--muted); letter-spacing: .3em; margin-bottom: 18px; }
+.closing p { font-size: 17px; font-weight: 400; line-height: 1.8; margin: 0 0 12px; letter-spacing: -.04em; color: #5f5f5f; }
+.closing small { color: var(--muted); font-size: 12px; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 24px; padding: 24px 0 16px; color: var(--muted); font-size: 11px; }
+.footer-inner > div { flex-basis: 100%; }
+.footer-inner a { min-height: 48px; display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.breadcrumb { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 22px; color: var(--muted); font-size: 12px; }
+.breadcrumb a { min-height: 44px; display: flex; align-items: center; }
+.page-section { border-top: 0; padding-top: 18px; }
+h1.page-title { font-size: 29px; font-weight: 400; line-height: 1.5; letter-spacing: -.045em; margin: 0; }
+.page-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 18px 0; border-top: 1px solid var(--line); }
+.page-nav a { min-width: 0; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--line); border-radius: 7px; padding: 10px 8px; font-size: 13px; line-height: 1.5; }
+.page-nav a:hover { background: #f0f0f0; }
+.album-directory { display: grid; grid-template-columns: minmax(0, 1fr); }
+.directory-link { display: grid; grid-template-columns: 26px minmax(0, 1fr) 20px; gap: 13px; align-items: center; min-height: 88px; padding: 19px 4px; border-bottom: 1px solid var(--line); }
+.directory-link:hover { background: #f5f5f5; }
+.directory-number { font-family: var(--serif); font-size: 19px; font-style: italic; color: #777777; }
+.directory-title { display: block; font-size: 16px; font-weight: 400; letter-spacing: -.025em; }
+.directory-description { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+.directory-arrow { color: #777777; font-size: 19px; }
+/* 화면 하단의 메뉴는 휴대폰 홈 표시 영역을 피해 배치합니다. */
+.album-menu { position: fixed; z-index: 6; bottom: 0; left: 50%; transform: translateX(-50%); width: min(100%, 520px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid #dedede; background: #fcfcfcf5; backdrop-filter: blur(16px); }
+.album-menu a { min-width: 0; min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border-radius: 8px; color: #707070; font-size: 12px; line-height: 1.4; }
+.album-menu svg { width: 20px; height: 20px; flex-shrink: 0; }
+.album-menu a[aria-current="page"] { background: #ebebeb; color: #383838; }
+.album-menu a:hover { background: #f0f0f0; }
+@media (min-width: 560px) {
+  body { border-inline: 1px solid #e3e3e3; }
+}
+@media (max-width: 359px) {
+  .wrap { width: calc(100% - 32px); }
+  .hero-meta .mono { font-size: 9px; letter-spacing: .05em; }
+  .header-label { font-size: 9px; }
+  .primary-link, .text-link { font-size: 12px; gap: 7px; }
+  h1.page-title { font-size: 27px; }
+  .album-menu { gap: 2px; padding-inline: 8px; }
+  .album-menu a { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* 글자 굵기 설정: 공통 시스템 글꼴을 사용합니다. */
+.font-weight-100 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+.font-weight-200 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+.font-weight-300 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.font-weight-400 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-weight-500 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.font-weight-600 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.font-weight-700 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.font-weight-800 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+.font-weight-900 {
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* 곡 제목 옆 가사 링크와 곡별 가사 페이지 */
+.track-row { display: grid; grid-template-columns: minmax(0, 1fr) 44px; align-items: center; gap: 4px; }
+.lyrics-link { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--muted); }
+.lyrics-link svg { width: 21px; height: 21px; }
+.lyrics-link:hover { background: #eeeeee; color: var(--text); }
+.lyrics-toolbar { justify-content: space-between; gap: 16px; }
+.lyrics-back { min-height: 48px; display: inline-flex; align-items: center; gap: 7px; padding: 8px 0; font-size: 14px; }
+.lyrics-back svg { width: 22px; height: 22px; }
+.lyrics-toolbar-label { color: var(--muted); font-size: 13px; }
+.lyrics-page { padding-top: 28px; padding-bottom: 36px; }
+h1.lyrics-title { margin: 9px 0 8px; font-size: clamp(26px, 7vw, 32px); font-weight: 600; letter-spacing: -.035em; line-height: 1.5; }
+.lyrics-artist { margin: 0 0 30px; color: var(--muted); font-size: 13px; }
+.lyrics-page .lyrics { font-size: 16px; line-height: 2.15; color: var(--text); }
+.lyrics-credits { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
+
+
+/* SOFT CURVES — 공통 곡선 디자인 */
+:root {
+  --canvas: #eeeeee;
+  --radius-sheet: 34px;
+  --radius-card: 22px;
+  --radius-button: 16px;
+}
+html { background: #e7e7e7; }
+body { background: var(--canvas); padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)); }
+.site-header { background: #eeeeeef2; border-bottom: 0; }
+.header-inner { min-height: 66px; }
+main.page-surface { width: 100%; min-height: calc(100svh - 174px); margin: 0; padding-top: 12px; padding-bottom: 24px; background: var(--bg); border-radius: var(--radius-sheet) var(--radius-sheet) 0 0; }
+.cover-image { border-radius: var(--radius-card); border-color: #e8e8e8; box-shadow: 0 12px 32px #0000000c; }
+figcaption.cover-info { margin-top: 14px; }
+.album-info-link { min-height: 44px; padding: 8px 16px; border: 1px solid #e4e4e4; border-radius: 999px; background: #f1f1f1; }
+.album-info-link:hover { background: #e7e7e7; text-decoration: none; }
+.primary-link, .text-link, .page-nav a { border-radius: var(--radius-button); }
+/* 선으로 이어지는 곡 목록을 둥근 하나의 영역으로 감쌉니다. */
+.track-list { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-card); background: #ffffff; box-shadow: 0 6px 20px #00000004; }
+.track { padding: 3px 8px; }
+.track:last-child { border-bottom: 0; }
+.track-row { padding: 0 4px; border-radius: var(--radius-button); }
+.track-row:hover { background: #f5f5f5; }
+.track-link { border-radius: var(--radius-button); }
+.track-link:hover { background: transparent; }
+.lyrics-link { border-radius: 50%; background: #f1f1f1; }
+.lyrics-link:hover { background: #e4e4e4; }
+/* 하단은 가장자리와 선택 영역을 모두 둥글게 만듭니다. */
+.album-menu { bottom: calc(12px + env(safe-area-inset-bottom, 0px)); width: min(calc(100% - 24px), 496px); padding: 8px; gap: 6px; border: 1px solid #dddddd; border-radius: 28px; background: #f9f9f9f2; box-shadow: 0 10px 32px #00000012; }
+.album-menu a { min-height: 54px; border-radius: 20px; }
+.album-menu a[aria-current="page"] { background: #e5e5e5; font-weight: 600; box-shadow: inset 0 1px 0 #ffffff70; }
+.album-menu a:hover { background: #ebebeb; }
+/* 가사와 앨범 정보의 뒤로가기 버튼도 같은 형태를 사용합니다. */
+.lyrics-back { min-height: 44px; padding: 8px 14px 8px 10px; border: 1px solid #dedede; border-radius: 999px; background: #fcfcfc; }
+.lyrics-back:hover { background: #e6e6e6; }
+main.page-surface.lyrics-page { padding: 28px 20px 36px; }
+.lyrics-content { padding: 22px; border-radius: var(--radius-card); background: #f4f4f4; }
+.lyrics-credits { border-top: 0; padding-top: 8px; margin-top: 24px; }
+/* 소개, 사진, 크레딧까지 같은 곡률을 이어갑니다. */
+.about-pull { padding: 22px; border-radius: var(--radius-card); background: #f1f1f1; }
+.editable-copy { padding: 18px; border: 0; border-radius: 18px; background: #f5f5f5; }
+.photo-placeholder { border-radius: var(--radius-card); }
+.gallery-image { border-radius: inherit; }
+.gallery-grid figcaption { padding-inline: 6px; }
+.band-note { padding: 22px; border-left: 0; border-radius: var(--radius-card); background: #f2f2f2; }
+.credit-list { padding: 4px 18px; border-radius: var(--radius-card); background: #f5f5f5; }
+.credit-row:last-child { border-bottom: 0; }
+@media (min-width: 560px) {
+  body { box-shadow: 0 0 48px #00000008; }
+}
+@media (max-width: 359px) {
+  :root { --radius-sheet: 28px; --radius-card: 19px; }
+  .album-menu { width: calc(100% - 20px); padding: 7px; gap: 4px; border-radius: 25px; }
+  .album-menu a { border-radius: 18px; }
+  main.page-surface.lyrics-page { padding-inline: 16px; }
+  .lyrics-content { padding: 18px; }
+}
