@@ -270,3 +270,18 @@ main.page-surface.lyrics-page { padding: 28px 20px 36px; }
   main.page-surface.lyrics-page { padding-inline: 16px; }
   .lyrics-content { padding: 18px; }
 }
+.gallery-grid img {
+  border-radius: 15px;
+}
+
+/* 공통 상단 로고 */
+.brand-logo { display: block; width: 60px; height: auto; flex-shrink: 0; object-fit: contain; mix-blend-mode: multiply; }
+.brand-home { display: inline-flex; align-items: center; min-height: 54px; }
+.logo-toolbar { display: grid; grid-template-columns: 88px minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+.logo-toolbar .lyrics-toolbar-label { text-align: center; font-size: 12px; white-space: nowrap; }
+.logo-toolbar .lyrics-back { white-space: nowrap; }
+@media (max-width: 359px) {
+  .brand-logo { width: 78px; }
+  .logo-toolbar { grid-template-columns: 78px minmax(0, 1fr) auto; gap: 6px; }
+  .logo-toolbar .lyrics-back { padding-inline: 8px; gap: 5px; font-size: 13px; }
+}
